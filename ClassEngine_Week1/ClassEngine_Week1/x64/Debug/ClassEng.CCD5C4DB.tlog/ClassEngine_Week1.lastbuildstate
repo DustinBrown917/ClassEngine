@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
-Debug|x64|D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.27.29110:TargetPlatformVersion=10.0.18362.0:
+Debug|x64|F:\Users\Sleepy\Documents\School\Semester 5\ClassEngine\ClassEngine_Week1\|
