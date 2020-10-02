@@ -1,0 +1,4 @@
+﻿  GameScene.cpp
+F:\Users\Sleepy\Documents\School\Semester 5\ClassEngine\ClassEngine_Week1\ClassEngine_Week1\Engine\Rendering\3D\GameObject.h(79,22): warning C4018: '<': signed/unsigned mismatch
+F:\Users\Sleepy\Documents\School\Semester 5\ClassEngine\ClassEngine_Week1\ClassEngine_Week1\Game\Scenes\GameScene.cpp(59): message : see reference to function template instantiation 'void GameObject::RemoveComponent<TestComponent>(void)' being compiled
+  ClassEngine_Week1.vcxproj -> F:\Users\Sleepy\Documents\School\Semester 5\ClassEngine\ClassEngine_Week1\Debug\ClassEngine_Week1.exe

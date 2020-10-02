@@ -1,0 +1,36 @@
+﻿  Camera.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Camera\Camera.h(4,10): fatal error C1083: Cannot open include file: 'glm/glm.hpp': No such file or directory
+  CoreEngine.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Debug.cpp
+  EventListener.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Event\MouseEventListener.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  GameObject.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Rendering\3D\Mesh.h(4,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  GameScene.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Game1.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  LightSource.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\FX\LightSource.h(4,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  LoadOBJModel.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Rendering\3D\Mesh.h(4,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Main.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Window.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Timer.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Timer.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  StartScene.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Core\Window.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Mesh.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Rendering\3D\Mesh.h(4,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  Model.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Rendering\3D\Mesh.h(4,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  ShaderHandler.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Graphics\ShaderHandler.h(9,10): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+  TextureHandler.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Graphics\TextureHandler.h(7,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  MouseEventListener.cpp
+D:\DBrow\Documents\School\Game Engines 4\ClassEngine_Week1\ClassEngine_Week1\Engine\Event\MouseEventListener.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Generating Code...
