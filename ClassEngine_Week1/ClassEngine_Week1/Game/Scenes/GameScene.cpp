@@ -39,21 +39,18 @@ bool GameScene::OnCreate()
 
 		GameObject* dice2 = new GameObject(model1);
 		SceneGraph::GetInstance()->AddGameObject(dice2, "tl_die");
-		//dice2->AddComponent<TestComponent>();
 		dice2->SetPositon(glm::vec3(-4.25f, 4.25f, -10.0f));
 		dice2->AddComponent<TestComponent>();
 		dice2->GetComponent<TestComponent>()->SetRotationSpeed(0.5f);
 
 		GameObject* dice3 = new GameObject(model1);
 		SceneGraph::GetInstance()->AddGameObject(dice3, "tr_die");
-		//dice3->AddComponent<TestComponent>();
 		dice3->SetPositon(glm::vec3(4.25, 4.25f, -10.0f));
 		dice3->AddComponent<TestComponent>();
 
 
 		GameObject* dice4 = new GameObject(model1);
 		SceneGraph::GetInstance()->AddGameObject(dice4, "br_die");
-		//dice4->AddComponent<TestComponent>();
 		dice4->SetPositon(glm::vec3(4.25, -4.25f, -10.0f));
 		dice4->AddComponent<TestComponent>();
 		dice4->RemoveComponent<TestComponent>();

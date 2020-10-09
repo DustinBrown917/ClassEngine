@@ -2,7 +2,7 @@
 
 #include "../Core/CoreEngine.h"
 
-Camera::Camera() : position(glm::vec3())
+Camera::Camera() : position(glm::vec3()), mouseLook(false)
 {
 	fov = 45.0f;
 	forward = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -119,6 +119,7 @@ void Camera::OnDestroy()
 
 void Camera::ProcessMouseMovement(glm::vec2 offset_)
 {
+	if (!mouseLook) { return; }
 	offset_ *= 0.15f;
 
 	yaw += offset_.x;
@@ -148,6 +149,11 @@ void Camera::ProcessMouseZoom(int y_)
 	}
 
 	UpdateCameraVector();
+}
+
+void Camera::SetMouseLook(const bool enabled)
+{
+	mouseLook = enabled;
 }
 
 void Camera::UpdateCameraVector()

@@ -3,10 +3,11 @@
 
 #include "Model.h"
 #include "Component.h"
+//#include "../../Core/IGUISerializable.h"
 #include <type_traits>
 #include <typeinfo>
 
-class GameObject
+class GameObject : public IGUISerializable
 {
 public:
 	GameObject(Model* model_, glm::vec3 position_ = glm::vec3());
@@ -62,6 +63,7 @@ public:
 				if (typeid(*c) == typeid(T)) {
 					//If we're here, we're sure that c is of type T. Static cast should suffice.
 					comp = static_cast<T*>(c);
+					break;
 				}
 			}
 		}
@@ -78,6 +80,8 @@ public:
 		if (std::is_base_of<Component, T>::value) {
 			for (int i = 0; i < components.size(); i++) {
 				if (typeid(*components[i]) == typeid(T)) {
+					delete components[i];
+					components[i] = nullptr;
 					components.erase(components.begin() + i);
 					std::cout << "Removed! Remaining components: " << components.size() << "\n";
 					return;
@@ -102,7 +106,14 @@ private:
 
 	bool hit;
 
+	bool guiEnabled;
+
 	std::vector<Component*> components;
+
+	// Inherited via IGUISerializable
+	virtual void SetGuiEnabled(const bool enabled) override ;
+	virtual bool GuiEnabled() override ;
+	virtual void UpdateGUI(const float deltaTime) override ;
 };
 
 

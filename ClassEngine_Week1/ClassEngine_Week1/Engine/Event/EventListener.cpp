@@ -1,5 +1,6 @@
 #include "EventListener.h"
 #include "../Core/CoreEngine.h"
+#include "../imgui-master/example/imgui_impl_sdl.h"
 
 EventListener::~EventListener()
 {
@@ -9,6 +10,9 @@ void EventListener::Update()
 {
 	SDL_Event sdlEvent;
 	while (SDL_PollEvent(&sdlEvent)) {
+
+		ImGui_ImplSDL2_ProcessEvent(&sdlEvent);
+
 		if (sdlEvent.type == SDL_QUIT) {
 			CoreEngine::GetInstance()->Exit();
 		}

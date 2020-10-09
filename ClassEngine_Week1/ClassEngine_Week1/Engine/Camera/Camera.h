@@ -36,12 +36,15 @@ public:
 	void ProcessMouseMovement(glm::vec2 offset_);
 	void ProcessMouseZoom(int y_);
 
+	void SetMouseLook(const bool enabled);
+
 private:
 	glm::vec3 position;
 	glm::mat4 perspective, orthographic;
 	float fov;
 	float yaw, pitch;
 	float nearPlane, farPlane;
+	bool mouseLook;
 	glm::vec3 forward, up, right, worldUp;
 	Frustum frustum;
 

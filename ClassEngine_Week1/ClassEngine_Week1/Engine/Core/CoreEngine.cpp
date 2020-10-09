@@ -1,4 +1,7 @@
 #include "CoreEngine.h"
+#include "../imgui-master/imgui.h"
+#include "../imgui-master/example/imgui_impl_sdl.h"
+#include "../imgui-master/example/imgui_impl_opengl3.h"
 
 std::unique_ptr<CoreEngine> CoreEngine::engineInstance = nullptr;
 
@@ -16,6 +19,12 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 {
 	Debug::DebugInit();
 	Debug::SetSeverity(MessageType::TYPE_INFO);
+
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+	ImGui::StyleColorsDark();
 
 	window = new Window();
 
@@ -133,6 +142,10 @@ void CoreEngine::NotifyOfMouseScroll(int y_)
 
 void CoreEngine::Update(float deltaTime_)
 {
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplSDL2_NewFrame(window->GetWindow());
+	ImGui::NewFrame();
+
 	if (gameInterface) {
 		gameInterface->Update(deltaTime_);
 	}
@@ -149,11 +162,15 @@ void CoreEngine::Render()
 		gameInterface->Render();
 	}
 
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
 	SDL_GL_SwapWindow(window->GetWindow());
 }
 
 void CoreEngine::OnDestroy()
 {
+
 	ShaderHandler::GetInstance()->OnDestroy();
 	TextureHandler::GetInstance()->OnDestroy();
 	MaterialHandler::GetInstance()->OnDestroy();
@@ -168,7 +185,7 @@ void CoreEngine::OnDestroy()
 
 	delete window;
 	window = nullptr;
-
+	
 	SDL_Quit();
 	exit(0);
 }

@@ -122,6 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\imgui-master\example\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Engine\imgui-master\example\imgui_impl_sdl.cpp" />
+    <ClCompile Include="Engine\imgui-master\imgui.cpp" />
+    <ClCompile Include="Engine\imgui-master\imgui_demo.cpp" />
+    <ClCompile Include="Engine\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="Engine\imgui-master\imgui_widgets.cpp" />
+    <ClCompile Include="Engine\imgui-master\misc\cpp\imgui_stdlib.cpp" />
     <ClCompile Include="Engine\Rendering\3D\Component.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
@@ -152,6 +159,16 @@
     <ClCompile Include="Engine\Core\OctSpatialPartition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Core\IGUISerializable.h" />
+    <ClInclude Include="Engine\imgui-master\example\imgui_impl_opengl3.h" />
+    <ClInclude Include="Engine\imgui-master\example\imgui_impl_sdl.h" />
+    <ClInclude Include="Engine\imgui-master\imconfig.h" />
+    <ClInclude Include="Engine\imgui-master\imgui.h" />
+    <ClInclude Include="Engine\imgui-master\imgui_internal.h" />
+    <ClInclude Include="Engine\imgui-master\imstb_rectpack.h" />
+    <ClInclude Include="Engine\imgui-master\imstb_textedit.h" />
+    <ClInclude Include="Engine\imgui-master\imstb_truetype.h" />
+    <ClInclude Include="Engine\imgui-master\misc\cpp\imgui_stdlib.h" />
     <ClInclude Include="Engine\Rendering\3D\Component.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
     <ClInclude Include="Engine\Math\CollisionDetection.h" />
@@ -189,6 +206,9 @@
     <None Include="Engine\Shaders\ColourVertexShader.glsl" />
     <None Include="Engine\Shaders\fragmentShader.glsl" />
     <None Include="Engine\Shaders\vertexShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Engine\imgui-master\misc\cpp\README.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

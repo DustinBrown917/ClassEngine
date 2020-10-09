@@ -1,4 +1,5 @@
 #include "SceneGraph.h"
+#include "../imgui-master/imgui.h"
 
 
 std::unique_ptr<SceneGraph> SceneGraph::sceneGraphInstance = nullptr;
@@ -79,7 +80,8 @@ GameObject* SceneGraph::GetGameObject(std::string tag_)
 	}
 	return nullptr;
 }
-
+bool someBoolean = false;
+float speed = 5.0f;
 void SceneGraph::Update(const float deltaTime__)
 {
 	for (auto go : sceneGameObjects) {

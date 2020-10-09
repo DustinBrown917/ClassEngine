@@ -1,5 +1,7 @@
 #include "Window.h"
 #include "Debug.h"
+#include "../imgui-master/example/imgui_impl_opengl3.h"
+#include "../imgui-master/example/imgui_impl_sdl.h"
 
 Window::Window() : width(0), height(0), window(nullptr)
 {
@@ -34,6 +36,9 @@ bool Window::OnCreate(std::string name_, int width_, int height_)
 
 	SetPostAttributes();
 
+	ImGui_ImplSDL2_InitForOpenGL(window, context);
+	ImGui_ImplOpenGL3_Init();
+
 	GLenum error = glewInit();
 
 	if (error != GLEW_OK) {
@@ -53,6 +58,8 @@ bool Window::OnCreate(std::string name_, int width_, int height_)
 
 void Window::OnDestroy()
 {
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplSDL2_Shutdown();
 	SDL_GL_DeleteContext(context);
 	SDL_DestroyWindow(window);
 	window = nullptr;
