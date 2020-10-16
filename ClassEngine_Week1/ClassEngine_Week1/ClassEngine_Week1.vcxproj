@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\GameDev\OpenGL\include;C:\GameDev\SDL\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\GameDev\Audio\include;C:\GameDev\OpenGL\include;C:\GameDev\SDL\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,8 +80,8 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\GameDev\SDL\lib;C:\GameDev\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\GameDev\SDL\lib;C:\GameDev\OpenGL\lib;C:\GameDev\Audio\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;fmod_vc.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -122,6 +122,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Core\Audio\AudioSource.cpp" />
+    <ClCompile Include="Engine\Core\Audio\AudioHandler.cpp" />
     <ClCompile Include="Engine\imgui-master\example\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Engine\imgui-master\example\imgui_impl_sdl.cpp" />
     <ClCompile Include="Engine\imgui-master\imgui.cpp" />
@@ -159,6 +161,8 @@
     <ClCompile Include="Engine\Core\OctSpatialPartition.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Core\Audio\AudioSource.h" />
+    <ClInclude Include="Engine\Core\Audio\AudioHandler.h" />
     <ClInclude Include="Engine\Core\IGUISerializable.h" />
     <ClInclude Include="Engine\imgui-master\example\imgui_impl_opengl3.h" />
     <ClInclude Include="Engine\imgui-master\example\imgui_impl_sdl.h" />
@@ -209,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Engine\imgui-master\misc\cpp\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resources\Audio\click.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

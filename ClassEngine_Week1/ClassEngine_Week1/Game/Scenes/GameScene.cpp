@@ -1,4 +1,5 @@
 #include"../../Engine/Rendering/3D/TestComponent.h"
+#include "../../Engine/Core/Audio/AudioHandler.h"
 #include "GameScene.h"
 
 
@@ -10,6 +11,7 @@ GameScene::GameScene() : Scene()
 GameScene::~GameScene()
 {
 	SceneGraph::GetInstance()->OnDestroy();
+	AudioHandler::GetInstance()->OnDestroy();
 }
 
 bool GameScene::OnCreate()
@@ -19,6 +21,11 @@ bool GameScene::OnCreate()
 	CoreEngine::GetInstance()->SetCamera(new Camera());
 	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 4.0f));
 	CoreEngine::GetInstance()->GetCamera()->AddLightSource(new LightSource(glm::vec3(0.0f, 0.0f, 2.0f), 0.1f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f)));
+	
+	if (!AudioHandler::GetInstance()->OnCreate(CoreEngine::GetInstance()->GetCamera()->GetPosition())) {
+		Debug::Error("Failed to create audio manager.", "GameScene.cpp", __LINE__);
+		return false;
+	}
 	
 	CollisionHandler::GetInstance()->OnCreate(100.0f);
 
@@ -36,6 +43,7 @@ bool GameScene::OnCreate()
 		dice->AddComponent<TestComponent>();
 		dice->SetPositon(glm::vec3(-4.25f, -4.25f, -10.0f));
 		dice->GetComponent<TestComponent>()->SetRotationSpeed(0.001f);
+		dice->AddComponent<AudioSource>("loop.wav", true, false, true);
 
 		GameObject* dice2 = new GameObject(model1);
 		SceneGraph::GetInstance()->AddGameObject(dice2, "tl_die");
@@ -62,6 +70,8 @@ bool GameScene::OnCreate()
 		apple->SetPositon(glm::vec3(0, 0, -10));
 		apple->AddComponent<TestComponent>();
 		apple->GetComponent<TestComponent>()->SetRotationSpeed(-0.01f);
+
+		apple->AddComponent<AudioSource>("click.wav", false, true, false);
 	}
 
 	return true;
