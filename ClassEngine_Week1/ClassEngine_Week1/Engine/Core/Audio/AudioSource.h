@@ -7,7 +7,7 @@ class AudioSource : public Component
 {
 public:
 
-	AudioSource(std::string name_, bool shouldLoop_, bool is3d_, bool stream_);
+	AudioSource(std::string name_, bool shouldLoop_, bool is3d_, bool stream_, bool playOnCreate_ = false);
 	virtual ~AudioSource();
 
 	// Inherited via Component
@@ -23,6 +23,7 @@ public:
 private:
 	
 	bool guiEnabled = true;
+	bool playOnCreate = false;
 
 	std::string fileName;
 	int channelId;

@@ -133,22 +133,30 @@ int AudioHandler::PlaySound(std::string name_, glm::vec3 position_, glm::vec3 ve
 {
 	int channelId = -1;
 
-	if (GetSound(name_) == nullptr) {
+	FMOD::Sound* s = GetSound(name_);
+
+	if (s == nullptr) {
 		LoadSound(name_, false, true, false);
 
-		if (GetSound(name_) == nullptr) {
+		s = s = GetSound(name_);
+
+		if (s == nullptr) {
 			Debug::Error("Could not play sound: " + name_, "AudioHandler.cpp", __LINE__);
 			return -1;
 		}
 	}
 
 	FMOD::Channel* c = nullptr;
+	FMOD_MODE mode = FMOD_MODE();
+	s->getMode(&mode);
 
 	system->playSound(GetSound(name_), nullptr, true, &c);
 
-	if (c->set3DAttributes(&glmToFMOD(position_), &glmToFMOD(velocity)) != FMOD_OK) {
-		Debug::Error("Could not set 3d attributes on sound: " + name_, "AudioHandler.cpp", __LINE__);
-		return -1;
+	if (mode & FMOD_2D == FMOD_2D) {
+		if (c->set3DAttributes(&glmToFMOD(position_), &glmToFMOD(velocity)) != FMOD_OK) {
+			Debug::Error("Could not set 3d attributes on sound: " + name_, "AudioHandler.cpp", __LINE__);
+			return -1;
+		}
 	}
 
 	if (c->setVolume(volume) != FMOD_OK) {
@@ -184,10 +192,7 @@ void AudioHandler::UpdateChannelPhysics(int channelId_, glm::vec3 position_, glm
 
 bool AudioHandler::ChannelIsPlayingSound(int channelId_)
 {
-	FMOD::Channel* channel = nullptr;
-	if (channels.find(channelId_) != channels.end()) {
-		channel = channels[channelId_];
-	}
+	FMOD::Channel* channel = GetChannel(channelId_);
 
 	if (channel == nullptr) {
 		Debug::Error("Channel not found: " + channelId_, "AudioHandler.cpp", __LINE__);
@@ -199,5 +204,29 @@ bool AudioHandler::ChannelIsPlayingSound(int channelId_)
 
 	return isPlaying;
 }
+
+void AudioHandler::SetChannelPause(int channelId_, bool paused_)
+{
+	FMOD::Channel* channel = GetChannel(channelId_);
+
+	if (channel == nullptr) {
+		Debug::Error("Channel not found: " + channelId_, "AudioHandler.cpp", __LINE__);
+		return;
+	}
+
+	channel->setPaused(paused_);
+}
+
+FMOD::Channel* AudioHandler::GetChannel(int channelId_)
+{
+	FMOD::Channel* channel = nullptr;
+	if (channels.find(channelId_) != channels.end()) {
+		channel = channels[channelId_];
+	}
+
+	return channel;
+}
+
+
 
 

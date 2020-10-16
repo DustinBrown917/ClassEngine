@@ -44,6 +44,8 @@ private:
 	int PlaySound( std::string name_, glm::vec3 position_, glm::vec3 velocity = glm::vec3(0), float volume = 1.0f);
 	void UpdateChannelPhysics(int channelId_, glm::vec3 position_, glm::vec3 velocity_ = glm::vec3(0));
 	bool ChannelIsPlayingSound(int channelId_);
+	void SetChannelPause(int channelId_, bool paused_);
+	FMOD::Channel* GetChannel(int channelId_);
 };
 
 #endif // !AUDIOHANDLER_H

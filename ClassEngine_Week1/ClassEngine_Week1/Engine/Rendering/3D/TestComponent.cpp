@@ -28,6 +28,7 @@ bool TestComponent::GuiEnabled()
 void TestComponent::UpdateGUI(const float deltaTime)
 {
     if (!guiEnabled) { return; }
+    ImGui::LabelText("", "Spinner:");
     ImGui::SliderFloat("Speed", &rotationSpeed, -1.0f, 1.0f);
     if (ImGui::Button("Remove Spinner")) {
         gameObject->RemoveComponent<TestComponent>();

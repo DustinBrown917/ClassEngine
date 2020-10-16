@@ -216,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\Audio\click.wav" />
+    <Media Include="Resources\Audio\loop.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

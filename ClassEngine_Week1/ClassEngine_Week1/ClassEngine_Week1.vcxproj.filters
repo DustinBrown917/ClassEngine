@@ -271,5 +271,8 @@
     <Media Include="Resources\Audio\click.wav">
       <Filter>Resource Files</Filter>
     </Media>
+    <Media Include="Resources\Audio\loop.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>
