@@ -170,7 +170,6 @@ void CoreEngine::Render()
 
 void CoreEngine::OnDestroy()
 {
-
 	ShaderHandler::GetInstance()->OnDestroy();
 	TextureHandler::GetInstance()->OnDestroy();
 	MaterialHandler::GetInstance()->OnDestroy();

@@ -31,8 +31,8 @@ public:
 	void SetTag(std::string tag_);
 	void SetHit(const bool hit_, int buttonType_);
 
-	template<typename T>
-	void AddComponent() {
+	template<typename T, typename ... Args>
+	void AddComponent(Args&& ... args_) {
 		if (std::is_base_of<Component, T>::value) {
 
 			for (Component* c : components)
@@ -43,7 +43,7 @@ public:
 				}
 			}
 
-			components.push_back(new T());
+			components.push_back(new T(std::forward<Args>(args_)...));
 			components.back()->OnCreate(this);
 			std::cout << "Component \"" << typeid(T).name() << "\" added. Current component count: " << components.size() << "\n";
 		}
