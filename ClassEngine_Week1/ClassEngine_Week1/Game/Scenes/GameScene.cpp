@@ -3,13 +3,15 @@
 #include "GameScene.h"
 
 
-GameScene::GameScene() : Scene()
+GameScene::GameScene() : Scene(), emitter(nullptr)
 {
 
 }
 
 GameScene::~GameScene()
 {
+	delete emitter;
+	emitter = nullptr;
 	SceneGraph::GetInstance()->OnDestroy();
 	AudioHandler::GetInstance()->OnDestroy();
 }
@@ -74,15 +76,19 @@ bool GameScene::OnCreate()
 		apple->AddComponent<AudioSource>("click.wav", false, true, false);
 	}
 
+	emitter = new ParticleEmitter(500, "ParticleShader");
+
 	return true;
 }
 
 void GameScene::Update(const float deltaTime_)
 {
 	SceneGraph::GetInstance()->Update(deltaTime_);
+	emitter->Update(deltaTime_);
 }
 
 void GameScene::Render()
 {
 	SceneGraph::GetInstance()->Render(CoreEngine::GetInstance()->GetCamera());
+	emitter->Render(CoreEngine::GetInstance()->GetCamera());
 }

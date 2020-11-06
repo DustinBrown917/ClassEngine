@@ -131,7 +131,6 @@
     <ClCompile Include="Engine\imgui-master\imgui_draw.cpp" />
     <ClCompile Include="Engine\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="Engine\imgui-master\misc\cpp\imgui_stdlib.cpp" />
-    <ClCompile Include="Engine\Rendering\3D\Component.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
     <ClCompile Include="Engine\Camera\Camera.cpp" />
@@ -159,6 +158,8 @@
     <ClCompile Include="Engine\FX\MaterialLoader.cpp" />
     <ClCompile Include="Engine\Math\Plane.cpp" />
     <ClCompile Include="Engine\Core\OctSpatialPartition.cpp" />
+    <ClCompile Include="Engine\Rendering\Particles\Particle.cpp" />
+    <ClCompile Include="Engine\Rendering\Particles\ParticleEmitter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\Audio\AudioSource.h" />
@@ -204,11 +205,15 @@
     <ClInclude Include="Engine\FX\MaterialLoader.h" />
     <ClInclude Include="Engine\Math\Plane.h" />
     <ClInclude Include="Engine\Core\OctSpatialPartition.h" />
+    <ClInclude Include="Engine\Rendering\Particles\Particle.h" />
+    <ClInclude Include="Engine\Rendering\Particles\ParticleEmitter.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />
     <None Include="Engine\Shaders\ColourVertexShader.glsl" />
     <None Include="Engine\Shaders\fragmentShader.glsl" />
+    <None Include="Engine\Shaders\ParticleFragment.glsl" />
+    <None Include="Engine\Shaders\ParticleVertex.glsl" />
     <None Include="Engine\Shaders\vertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>

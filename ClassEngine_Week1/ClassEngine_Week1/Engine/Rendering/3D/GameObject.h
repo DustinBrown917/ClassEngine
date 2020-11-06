@@ -45,7 +45,6 @@ public:
 
 			components.push_back(new T(std::forward<Args>(args_)...));
 			components.back()->OnCreate(this);
-			std::cout << "Component \"" << typeid(T).name() << "\" added. Current component count: " << components.size() << "\n";
 		}
 		else {
 			std::cout << typeid(T).name() << " does not inherit from Component!\n";
@@ -83,7 +82,6 @@ public:
 					delete components[i];
 					components[i] = nullptr;
 					components.erase(components.begin() + i);
-					std::cout << "Removed! Remaining components: " << components.size() << "\n";
 					return;
 				}
 			}

@@ -108,7 +108,7 @@ void AudioHandler::LoadSound(std::string name_, bool shouldLoop_, bool is3d_, bo
 		mode |= FMOD_CREATESTREAM;
 	}
 	else {
-		mode |= FMOD_CREATESAMPLE;
+		mode |= FMOD_CREATECOMPRESSEDSAMPLE;
 	}
 
 	FMOD::Sound* s = nullptr;

@@ -63,35 +63,35 @@ void OctNode::Octify(int depth_)
 	childNum += 8;
 
 
-	if (depth_ == 1) {
-		std::cout << "Chunk:\n";
+	//if (depth_ == 1) {
+	//	std::cout << "Chunk:\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_TLF)]->octBounds->GetCenter();
-		std::cout << "Top LF:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_TLF)]->octBounds->GetCenter();
+	//	std::cout << "Top LF:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_TRF)]->octBounds->GetCenter();
-		std::cout << "Top RF:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_TRF)]->octBounds->GetCenter();
+	//	std::cout << "Top RF:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_TLR)]->octBounds->GetCenter();
-		std::cout << "Top LR:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_TLR)]->octBounds->GetCenter();
+	//	std::cout << "Top LR:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_TRR)]->octBounds->GetCenter();
-		std::cout << "Top RR:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_TRR)]->octBounds->GetCenter();
+	//	std::cout << "Top RR:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_BLF)]->octBounds->GetCenter();
-		std::cout << "Bot LF:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_BLF)]->octBounds->GetCenter();
+	//	std::cout << "Bot LF:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_BRF)]->octBounds->GetCenter();
-		std::cout << "Bot RF:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_BRF)]->octBounds->GetCenter();
+	//	std::cout << "Bot RF:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_BLR)]->octBounds->GetCenter();
-		std::cout << "Bot LR:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_BLR)]->octBounds->GetCenter();
+	//	std::cout << "Bot LR:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		c = children[static_cast<int>(OctChildren::OCT_BRR)]->octBounds->GetCenter();
-		std::cout << "Bot RR:\t" << c.x << "," << c.y << "," << c.z << "\n";
+	//	c = children[static_cast<int>(OctChildren::OCT_BRR)]->octBounds->GetCenter();
+	//	std::cout << "Bot RR:\t" << c.x << "," << c.y << "," << c.z << "\n";
 
-		std::cout << "\n\n";
-	}
+	//	std::cout << "\n\n";
+	//}
 
 	for (int i = 0; i < OCT_MAX; i++) {
 		children[i]->Octify(depth_ - 1);

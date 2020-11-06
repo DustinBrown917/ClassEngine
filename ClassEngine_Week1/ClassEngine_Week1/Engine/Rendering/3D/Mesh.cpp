@@ -61,6 +61,7 @@ void Mesh::Render(Camera* camera_, std::vector<glm::mat4> instances_)
 
 	glBindVertexArray(0);
 	glBindTexture(GL_TEXTURE_2D, 0);
+	
 }
 
 void Mesh::GenerateBuffers()

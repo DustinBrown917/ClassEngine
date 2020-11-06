@@ -13,6 +13,7 @@ ShaderHandler* ShaderHandler::GetInstance()
 
 void ShaderHandler::CreateProgram(const std::string& shaderName_, const std::string& vertexShaderFileName_, const std::string& fragmentShaderFileName_)
 {
+	std::cout << "Creating shader: " << shaderName_ << std::endl;
 	std::string vertexShaderCode = ReadShader(vertexShaderFileName_);
 	std::string fragmentShaderCode = ReadShader(fragmentShaderFileName_);
 
@@ -53,6 +54,8 @@ void ShaderHandler::CreateProgram(const std::string& shaderName_, const std::str
 	programs[shaderName_] = program;
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+
+	std::cout << "Shader created: " << shaderName_ << std::endl;
 }
 
 GLuint ShaderHandler::GetShader(const std::string& shaderName_)

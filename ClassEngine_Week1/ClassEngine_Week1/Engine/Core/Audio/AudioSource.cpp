@@ -68,7 +68,6 @@ void AudioSource::Update(const float deltaTime_)
 void AudioSource::Play()
 {
     channelId = AudioHandler::GetInstance()->PlaySound(fileName, gameObject->GetPosition());
-
 }
 
 bool AudioSource::IsPlaying()
