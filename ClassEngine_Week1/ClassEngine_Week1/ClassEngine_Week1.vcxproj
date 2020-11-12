@@ -160,6 +160,7 @@
     <ClCompile Include="Engine\Core\OctSpatialPartition.cpp" />
     <ClCompile Include="Engine\Rendering\Particles\Particle.cpp" />
     <ClCompile Include="Engine\Rendering\Particles\ParticleEmitter.cpp" />
+    <ClCompile Include="Engine\Core\SettingsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\Audio\AudioSource.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Engine\imgui-master\imstb_textedit.h" />
     <ClInclude Include="Engine\imgui-master\imstb_truetype.h" />
     <ClInclude Include="Engine\imgui-master\misc\cpp\imgui_stdlib.h" />
+    <ClInclude Include="Engine\nlohmann\json.hpp" />
     <ClInclude Include="Engine\Rendering\3D\Component.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
     <ClInclude Include="Engine\Math\CollisionDetection.h" />
@@ -207,6 +209,7 @@
     <ClInclude Include="Engine\Core\OctSpatialPartition.h" />
     <ClInclude Include="Engine\Rendering\Particles\Particle.h" />
     <ClInclude Include="Engine\Rendering\Particles\ParticleEmitter.h" />
+    <ClInclude Include="Engine\Core\SettingsManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />

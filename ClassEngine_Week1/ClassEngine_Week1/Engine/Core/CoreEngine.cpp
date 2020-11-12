@@ -2,6 +2,7 @@
 #include "../imgui-master/imgui.h"
 #include "../imgui-master/example/imgui_impl_sdl.h"
 #include "../imgui-master/example/imgui_impl_opengl3.h"
+#include "SettingsManager.h"
 
 std::unique_ptr<CoreEngine> CoreEngine::engineInstance = nullptr;
 
@@ -32,6 +33,13 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 		Debug::FatalError("Window failed to initialize.", "CoreEngine.cpp", __LINE__);
 		return isRunning = false;
 	}
+
+	WindowSettings ws = WindowSettings();
+	ws.name = name_;
+	ws.width = width_;
+	ws.height = height_;
+	SettingsManager::SetWindowSettings(ws);
+	SettingsManager::SaveSettings();
 
 	SDL_WarpMouseInWindow(window->GetWindow(), window->GetWidth() * 0.5f, window->GetHeight() * 0.5f);
 	MouseEventListener::RegisterEngineObject(this);

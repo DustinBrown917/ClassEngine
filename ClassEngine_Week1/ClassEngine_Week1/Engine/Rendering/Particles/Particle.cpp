@@ -32,7 +32,7 @@ void Particle::Render(Camera* camera_)
 
 	if (camera_->IsInFrustum(vert.position)) {
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-		glPointSize(10.0f);
+		//glPointSize(10.0f);
 		glDrawArrays(GL_POINTS, 0, 1);		
 	}
 

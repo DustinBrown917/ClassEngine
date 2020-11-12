@@ -18,7 +18,7 @@ ParticleEmitter::ParticleEmitter(int numToEmit_, std::string shaderProgram_) : p
 	for (int i = 0; i < numToEmit; i++) {
 
 		Particle* p = new Particle(shaderProgram);
-		p->SetLifeTime(600.0f);
+		p->SetLifeTime(15.0f);
 		p->SetColour(glm::vec3(1, 0, 0));
 		RandomizeValues(p);
 		p->SetPosition(p->GetPosition() + position);
